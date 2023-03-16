@@ -180,6 +180,7 @@ def main():
             cur_address = cur_value['rrset_values']
         except KeyError:
             cur_address = ["127.0.0.1"]
+        log.info(f"started updating {rrset_name}.{domain}")
         if ipaddress not in cur_address:
             # if there exist a record, update it
             update_record = put_record(apikey=apikey,
