@@ -1,11 +1,12 @@
 # Gandi-ddns
 
 This is a simple python program that updated A and AAAA recornds using GANDI API.
-I made this for use on my linux machine, but should run on anything can can run python.
+I made this for use on my linux machine, but should run on anything can can run python3.
 
 ## Requirements
-python3.10 or more
-(the current version when created)
+- [] [python3.10 or more (the current version when created)](https://www.python.org/downloads/) 
+- [] [Domain on gandi.net](https://www.gandi.net/)
+- [] [Gandi Public Api KEY](https://api.gandi.net/docs/authentication/)
 
 ## Installation
 
@@ -44,6 +45,11 @@ or you can run the program once and it will create one for you
 .venv/bin/python3 gandi-ddns.py
 ```
 
+## Problems
+
+if you have any problems with the script feel free to open an issue.
+I will later add a FAQ for often seen problems.
+
 
 ## Contributing
 
@@ -62,7 +68,7 @@ Please make sure to update tests as appropriate.
 ## License
 
 <dl>
-  <dt rel="LICENSE">MIT License
+<dt rel="LICENSE">MIT License
 
 Copyright (c) 2023 Benjamin Jorgensen
 
