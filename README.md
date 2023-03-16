@@ -100,6 +100,7 @@ Please make sure to update tests as appropriate.
 - [ ] [Gandi API References](https://api.gandi.net/docs/livedns/)
 - [ ] [ConfigParser](https://docs.python.org/3/library/configparser.html)
 - [ ] [Requests](https://requests.readthedocs.io/en/latest/user/quickstart/#response-status-codes)
+- [ ] [IP API](https://www.ipify.org/)
 - [ ] [Inspired by this github repo](https://github.com/matt1/gandi-ddns)
 
 ## License
