@@ -4,9 +4,9 @@ This is a simple python program that updated A and AAAA recornds using GANDI API
 I made this for use on my linux machine, but should run on anything can can run python3.
 
 ## Requirements
-- [] [python3.10 or more (the current version when created)](https://www.python.org/downloads/) 
-- [] [Domain on gandi.net](https://www.gandi.net/)
-- [] [Gandi Public Api KEY](https://api.gandi.net/docs/authentication/)
+- [ ] [python3.10 or more (the current version when created)](https://www.python.org/downloads/) 
+- [ ] [Domain on gandi.net](https://www.gandi.net/)
+- [ ] [Gandi Public Api KEY](https://api.gandi.net/docs/authentication/)
 
 ## Installation
 
