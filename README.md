@@ -45,6 +45,43 @@ or you can run the program once and it will create one for you
 .venv/bin/python3 gandi-ddns.py
 ```
 
+//from here is linux spesific.
+[for easy to understand reference to cron](https://crontab.guru/)
+first set up a crontab
+```bash
+sudo crontab -e
+```
+if you have none, you might be prompted a to create one
+```bash
+no crontab for root - using an empty one
+
+Select an editor.  To change later, run 'select-editor'.
+  1. /bin/nano        <---- easiest
+  2. /usr/bin/vim.basic
+  3. /usr/bin/vim.tiny
+  4. /bin/ed
+
+Choose 1-4 [1]: 
+```
+if you dont know what this is, just press 1 then enter.
+this will open up a text editor with an example page
+
+create a new line with this to have your pc run the script at boot
+```bash
+@reboot /path/to/gandi-ddns/.venv/bin/python3 /path/to/gandi-ddns/gandi-ddns.py &
+```
+create a new line with this to have it run the script every 15 minutes
+```bash
+*/15 * * * * /path/to/gandi-ddns/.venv/bin/python3 /path/to/gandi-ddns//gandi-ddns.py
+```
+if you used text editor 1, nano you can now press ctrl+x, then press y, then press enter to save and exit the file
+
+Then to start the crontab run
+```bash
+sudo /etc/init.d/cron start
+sudo /etc/init.d/cron reload
+```
+
 ## Problems
 
 if you have any problems with the script feel free to open an issue.
