@@ -72,7 +72,7 @@ create a new line with this to have your pc run the script at boot
 ```
 create a new line with this to have it run the script every 15 minutes
 ```bash
-*/15 * * * * /path/to/gandi-ddns/.venv/bin/python3 /path/to/gandi-ddns//gandi-ddns.py
+*/15 * * * * /path/to/gandi-ddns/.venv/bin/python3 /path/to/gandi-ddns/gandi-ddns.py
 ```
 if you used text editor 1, nano you can now press ctrl+x, then press y, then press enter to save and exit the file
 
