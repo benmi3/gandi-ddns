@@ -39,6 +39,8 @@ def get_ip(record_type=str()) -> str | int:
             url = "https://api.ipify.org"
         elif record_type == 'AAAA':
             url = "https://api64.ipify.org"
+        else:
+            sys.exit()
         # get the current ipv4 address
         response = request("GET", url)
         # if request worked return text
@@ -66,9 +68,9 @@ rrset_type = A
 rrset_ttl = 320'''
 
 
-def create_example_config() -> bool:
+def create_example_config(filepath) -> bool:
     # create config.ini if not existing
-    with open('config.ini', 'x') as f:
+    with open(filepath, 'x') as f:
         # write example config
         f.write(template)
     return True
@@ -127,11 +129,14 @@ def status_translator(status_code=int()) -> str:
 
 
 def main():
+    cur_dir = path.dirname(path.realpath(__file__))
+    filepath = path.join(cur_dir, "config.ini")
+
     # first check if config file is there
-    if not path.exists('config.ini'):
+    if not path.exists(filepath):
         # if no config file create one
         log.error("Error: config file not found")
-        if not create_example_config():
+        if not create_example_config(filepath):
             # if it could not create file
             # raise error
             log.error("Could not create example file")
@@ -141,7 +146,7 @@ def main():
     # start configparser
     config = ConfigParser()
     # read the config file
-    config.read('config.ini')
+    config.read(filepath)
     # sections
     for section in config.sections():
         # get the apikey from config
@@ -192,6 +197,7 @@ def main():
         # check the status code
         message = status_translator(status_code=update_record.status_code)
         ok_codes = [200, 201]
+        print(update_record.json())
         if update_record.status_code in ok_codes:
             # if status is ok
             # log the message and continue
