@@ -25,7 +25,7 @@ add requirements to venv
 .venv/bin/python3 -m pip install -r requirements.txt
 ```
 
-## Usage
+## Config file
 create a "config.ini" file and use this template
 ```bash
 [section1]
@@ -44,8 +44,8 @@ or you can run the program once and it will create one for you
 ```bash
 .venv/bin/python3 gandi-ddns.py
 ```
+## usage
 
-//from here is linux spesific.
 [for easy to understand reference to cron](https://crontab.guru/)
 first set up a crontab
 ```bash
