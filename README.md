@@ -14,32 +14,50 @@ git clone https://gitlab.com/benmi/gandi-ddns.git
 ```
 create a .venv
 ```bash
-cd gand-ddns
+cd gandi-ddns
 python3 -m venv .venv
+.venv/bin/python3 -m pip install -r requirements.txt
 ```
 
 ## Usage
-TODO
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
+create a "config.ini" file and use this template
+```bash
+[section1]
+# gandi.net API key
+apikey = s3cr3t4p1k3y
+# Domain
+domain = example.com
+# record name
+rrset_name = @
+# record type
+rrset_type = A
+# rrset_ttl value 300 ~ 2592000
+rrset_ttl = 320
+```
+or you can run the program once and it will create one for you
+```bash
+.venv/bin/python3 gandi-ddns.py
 ```
 
+
 ## Contributing
-TODO
+
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
+## References
+
+- [ ] [Gandi API References](https://api.gandi.net/docs/livedns/)
+- [ ] [ConfigParser](https://docs.python.org/3/library/configparser.html)
+- [ ] [Requests](https://requests.readthedocs.io/en/latest/user/quickstart/#response-status-codes)
+- [ ] [Inspired by this github repo from matt1](https://github.com/matt1/gandi-ddns)
+
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+rel="LICENSE"
+
+<dl>
+  <dt rel="LICENSE">LICENSE</dt>
+</dl>
