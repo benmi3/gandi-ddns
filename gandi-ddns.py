@@ -8,11 +8,14 @@ from os import path
 
 
 def logging_tool(name):
+    cur_dir = path.dirname(path.realpath(__file__))
+    filepath = path.join(cur_dir, "logfile.log")
+
     file_formatter = logging.Formatter(
         '%(asctime)s~%(levelname)s~%(message)s~module:%(module)s~function:%(module)s')
     console_formatter = logging.Formatter('%(levelname)s -- %(message)s')
 
-    file_handler = logging.FileHandler("logfile.log")
+    file_handler = logging.FileHandler(filepath)
     file_handler.setLevel(logging.INFO)
     file_handler.setFormatter(file_formatter)
     console_handler = logging.StreamHandler()
