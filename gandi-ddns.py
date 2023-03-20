@@ -150,6 +150,10 @@ def main():
     config = ConfigParser()
     # read the config file
     config.read(filepath)
+    # get ipv4
+    a = get_ip('A')
+    # get ipv6
+    aaaa = get_ip('AAAA')
     # sections
     for section in config.sections():
         # get the apikey from config
@@ -168,7 +172,12 @@ def main():
         # all else is will raise error and break
         supported_types = ['A', 'AAAA']
         if rrset_type in supported_types:
-            ipaddress = get_ip(rrset_type)
+            if rrset_type == supported_types[0]:
+                ipaddress = a
+            elif rrset_type == supported_types[1]:
+                ipaddress = aaaa
+            else:
+                ipaddress = str("type_error")
         else:
             log.warning(" rrset_type is not A or AAAA.\nCheck config and try again")
             break
