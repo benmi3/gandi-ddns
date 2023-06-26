@@ -1,6 +1,6 @@
 # Gandi-ddns
 
-This is a simple python program that updated A and AAAA recornds using GANDI API.
+This is a simple python program that updated A and AAAA records using GANDI API.
 I made this for use on my linux machine, but should run on anything can can run python3.
 
 ## Requirements
