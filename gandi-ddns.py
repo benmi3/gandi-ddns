@@ -105,12 +105,11 @@ def put_record(apikey=str(),
     payload = f"{{\"rrset_type\":\"{rrset_type}\",\"rrset_values\":[\"{ipaddress}\"],\"rrset_ttl\":{rrset_ttl}}}"
     # correct headers
     headers = {
-        'authorization': f"Apikey {apikey}",
+        'authorization': f"Bearer {apikey}",
         'content-type': "application/json"
     }
 
     response = request("PUT", url, data=payload, headers=headers)
-
     return response
 
 

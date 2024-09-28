@@ -86,7 +86,7 @@ def get_record(apikey=str(),
     # url for api
     url = f"https://api.gandi.net/v5/livedns/domains/{domain}/records/{rrset_name}/{rrset_type}"
     # header for api
-    headers = {'authorization': f'Apikey {apikey}'}
+    headers = {'authorization': f'Bearer {apikey}'}
     # try a request
     response = request("GET", url, headers=headers)
     # return response
